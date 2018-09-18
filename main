@@ -22,7 +22,7 @@ if __name__ == "__main__":
                     cheapestCall.append([input_number[0:j], value[1][input_number[0:j]]])
                     operator = value[0]
             j += 1
-    #checking the content of operator after for loop to see if we have a match
+    #checking the content of operator after for loop to see if we have a match 
     if operator == None:
         print('There isn\'t an operater in our database that can route a call to desired number.')
     else:
