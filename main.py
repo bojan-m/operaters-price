@@ -5,7 +5,7 @@ operators =  {'Operator A' : {'1' : 0.9, '268' : 5.1, '46' : 0.17, '4620' : 0.23
 if __name__ == "__main__":
     #Input number
     input_number = input("Enter a number to dial: ")
-    #Initializing values for the final result
+    #Initializing values for the final result / buffers for last added values
     operator = None
     cheapestCall = [['111111111', 9999.9]]
     #Loop through dictionary items
@@ -14,7 +14,8 @@ if __name__ == "__main__":
         while j < len(input_number)+1: #while loop for the length of the number
             if input_number[0:j] in value[1].keys(): #searching for the part of the prefix in prefix keys
                 # checking if the value of the key is lower than the previous value in the final list
-                # and if the previous entry has shorter prefix (When several prefixes match the same number, the longest one should be used)
+                # and if the previous entry has a longer prefix (When several prefixes match the same number,
+                # the longest one should be used)
                 if value[1][input_number[0:j]] < cheapestCall[-1][1] and len(input_number[0:j]) <= len(cheapestCall[-1][0]):
                     cheapestCall.append([input_number[0:j], value[1][input_number[0:j]]])
                     operator = value[0]
